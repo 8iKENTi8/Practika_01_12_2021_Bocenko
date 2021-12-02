@@ -12,7 +12,7 @@ namespace Practika_01_12_2021
         //Строка подключения к бд
 
         MySqlConnection connection = new MySqlConnection("server=localhost;" +
-            "port=3306;username=root;password=root;database=ekz");
+            "port=3307;username=root;password=root;database=ekz");
 
         //Открывает соединение
         public void openConnection()

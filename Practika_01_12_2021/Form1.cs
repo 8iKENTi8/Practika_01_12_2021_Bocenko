@@ -37,6 +37,7 @@ namespace Practika_01_12_2021
         {
             Clients uc = new Clients();
             addUserControl(uc);
+            uc.Pain_Column();
         }
 
         //Договора
