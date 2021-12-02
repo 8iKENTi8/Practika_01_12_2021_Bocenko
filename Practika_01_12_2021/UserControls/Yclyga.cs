@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Practika_01_12_2021.AddControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -188,6 +189,16 @@ namespace Practika_01_12_2021.UserControls
                 MessageBox.Show(ex.Message, "Ошибка!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AddYcl().ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReloadDB();
         }
     }
 }

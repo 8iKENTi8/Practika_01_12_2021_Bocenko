@@ -59,6 +59,24 @@
     <Compile Include="AddControls\AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddControls\AddDol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddControls\AddDol.Designer.cs">
+      <DependentUpon>AddDol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddControls\AddEmploy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddControls\AddEmploy.Designer.cs">
+      <DependentUpon>AddEmploy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddControls\AddYcl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddControls\AddYcl.Designer.cs">
+      <DependentUpon>AddYcl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -100,6 +118,15 @@
     </Compile>
     <EmbeddedResource Include="AddControls\AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddControls\AddDol.resx">
+      <DependentUpon>AddDol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddControls\AddEmploy.resx">
+      <DependentUpon>AddEmploy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddControls\AddYcl.resx">
+      <DependentUpon>AddYcl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

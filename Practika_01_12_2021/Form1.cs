@@ -57,6 +57,7 @@ namespace Practika_01_12_2021
         {
             employee uc = new employee();
             addUserControl(uc);
+            uc.Pain_Column();
         }
 
         //Должности
@@ -64,6 +65,7 @@ namespace Practika_01_12_2021
         {
             Dolznocti uc = new Dolznocti();
             addUserControl(uc);
+            uc.Pain_Column();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
