@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Practika_01_12_2021
@@ -34,6 +36,28 @@ namespace Practika_01_12_2021
         public MySqlConnection getConnection()
         {
             return connection;
+        }
+
+        public static bool ChecBox(List<MaskedTextBox> tx,Label lb)
+        {
+
+            foreach (var i in tx)
+            {
+                if (i.Text == "")
+                {
+                    lb.BackColor = ColorTranslator.FromHtml("#f75e25");
+                    lb.Text = "Заполните все данные";
+                    i.BackColor = ColorTranslator.FromHtml("#f75e25");
+                    return true;
+                }
+                else
+                {
+                    lb.BackColor = Color.White;
+                    i.BackColor = Color.White;
+                }
+            }
+
+            return false;
         }
     }
 }

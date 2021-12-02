@@ -17,6 +17,10 @@ namespace Practika_01_12_2021
         public Form1()
         {
             InitializeComponent();
+            Yclyga uc = new Yclyga();
+            addUserControl(uc);
+            
+
         }
 
       
@@ -31,6 +35,7 @@ namespace Practika_01_12_2021
         {
             Yclyga uc = new Yclyga();
             addUserControl(uc);
+            uc.Pain_Column();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

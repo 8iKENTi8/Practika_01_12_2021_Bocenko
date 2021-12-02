@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Practika_01_12_2021.AddControls;
 
 namespace Practika_01_12_2021.UserControls
 {
@@ -88,7 +89,7 @@ namespace Practika_01_12_2021.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            new AddClient().ShowDialog();
         }
 
         private bool Check(DataGridViewCellEventArgs e)
@@ -177,7 +178,7 @@ namespace Practika_01_12_2021.UserControls
                             table.Rows.RemoveAt(rowIndex);
 
                             db.openConnection();
-                            if (command.ExecuteNonQuery() == 1) { MessageBox.Show("Запист  была удалена"); }
+                            if (command.ExecuteNonQuery() == 1) { MessageBox.Show("Запись  была удалена"); }
 
                             db.closeConnection();
                         }

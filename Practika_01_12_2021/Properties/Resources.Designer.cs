@@ -73,6 +73,36 @@ namespace Practika_01_12_2021.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1891023_cancel_cercle_close_delete_dismiss_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("1891023_cancel_cercle_close_delete_dismiss_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211652_close_icon {
+            get {
+                object obj = ResourceManager.GetObject("211652_close_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2290856_find_loupe_magnifier_magnifying_glass_search_icon {
+            get {
+                object obj = ResourceManager.GetObject("2290856_find_loupe_magnifier_magnifying glass_search_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2377640_business_company_hands_join_shakehand_icon {
             get {
                 object obj = ResourceManager.GetObject("2377640_business_company_hands_join_shakehand_icon", resourceCulture);

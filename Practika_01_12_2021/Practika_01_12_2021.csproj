@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddControls\AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddControls\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -92,6 +98,9 @@
     <Compile Include="UserControls\Yclyga.Designer.cs">
       <DependentUpon>Yclyga.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddControls\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +148,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1891023_cancel_cercle_close_delete_dismiss_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1891023_cancel_cercle_close_delete_dismiss_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211652_close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2290856_find_loupe_magnifier_magnifying glass_search_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
