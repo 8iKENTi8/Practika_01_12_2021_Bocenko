@@ -59,6 +59,12 @@
     <Compile Include="AddControls\AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddControls\AddDogovor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddControls\AddDogovor.Designer.cs">
+      <DependentUpon>AddDogovor.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddControls\AddDol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <EmbeddedResource Include="AddControls\AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddControls\AddDogovor.resx">
+      <DependentUpon>AddDogovor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddControls\AddDol.resx">
       <DependentUpon>AddDol.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dogovora.resx">
+      <DependentUpon>Dogovora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Dolznocti.resx">
       <DependentUpon>Dolznocti.cs</DependentUpon>

@@ -50,6 +50,7 @@ namespace Practika_01_12_2021
         {
             Dogovora uc = new Dogovora();
             addUserControl(uc);
+            uc.Pain_Column();
         }
 
         //Сотрудники

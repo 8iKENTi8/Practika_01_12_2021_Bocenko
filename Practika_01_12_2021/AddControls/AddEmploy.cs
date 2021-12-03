@@ -62,19 +62,8 @@ namespace Practika_01_12_2021.AddControls
 
                 dB.openConnection();
 
-                command =
-                    new MySqlCommand("SELECT `id_do` FROM `должность` WHERE `Название` = @ul",
-                    dB.getConnection());
-                command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = 
-                    guna2ComboBox1.SelectedItem.ToString();
+               
 
-                adapter = new MySqlDataAdapter();
-
-                adapter.SelectCommand = command;
-
-                adapter.Fill(tab);
-
-                
 
                 command =
                     new MySqlCommand("CALL `add_empl`(@id, @p0, @p1, @p2, @p3);",
