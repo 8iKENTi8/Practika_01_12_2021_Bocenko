@@ -19,7 +19,7 @@ namespace Practika_01_12_2021.UserControls
             InitializeComponent();
             if (DB.user_role == 1)
             {
-                button1.Visible = false;
+                 button1.Visible = false;
                 button2.Visible = false;
             }
 
