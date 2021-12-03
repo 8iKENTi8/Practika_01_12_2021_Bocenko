@@ -11,6 +11,8 @@ namespace Practika_01_12_2021
 {
     internal class DB
     {
+        public static int user_role,user_id;
+        public static string user_name;
         //Строка подключения к бд
 
         MySqlConnection connection = new MySqlConnection("server=localhost;" +

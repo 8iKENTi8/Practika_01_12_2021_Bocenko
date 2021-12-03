@@ -19,7 +19,19 @@ namespace Practika_01_12_2021
             InitializeComponent();
             Yclyga uc = new Yclyga();
             addUserControl(uc);
+            label1.Text = DB.user_name;
+
+            //В зависимости от роли производим следующие действия
+            if(DB.user_role==-1)
+                    {
+                        guna2Button3.Visible = false;
+                        guna2Button4.Visible = false;
+                        guna2Button5.Visible = false;
+                        guna2Button2.Text = "Мои договора";
+
+            }
             
+
 
         }
 
@@ -35,7 +47,9 @@ namespace Practika_01_12_2021
         {
             Yclyga uc = new Yclyga();
             addUserControl(uc);
-            uc.Pain_Column();
+            if(DB.user_role!=-1)
+                uc.Pain_Column();
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -50,7 +64,9 @@ namespace Practika_01_12_2021
         {
             Dogovora uc = new Dogovora();
             addUserControl(uc);
-            uc.Pain_Column();
+            if (DB.user_role != -1)
+                uc.Pain_Column();
+           
         }
 
         //Сотрудники

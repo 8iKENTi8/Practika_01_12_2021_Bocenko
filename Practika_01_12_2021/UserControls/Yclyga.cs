@@ -18,10 +18,17 @@ namespace Practika_01_12_2021.UserControls
         {
             InitializeComponent();
             Pain_Column();
+
+            if (DB.user_role == -1)
+            {
+               button1.Visible = false;
+                button2.Visible = false;
+            }
         }
 
         DataTable tab;
         string[] idArr;
+        MySqlCommand command;
         private void ReloadDB()
         {
 
@@ -31,16 +38,25 @@ namespace Practika_01_12_2021.UserControls
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command =
+             command =
                 new MySqlCommand("SELECT *, 'Update','Delete'" +
                 "FROM `услуга`", dB.getConnection());
+
+            if (DB.user_role == -1)
+            {
+                command =
+               new MySqlCommand("SELECT *" +
+               "FROM `услуга`", dB.getConnection());
+            }
 
             adapter.SelectCommand = command;
 
             adapter.Fill(tab);
 
             table.DataSource = tab;
-            Pain_Column();
+            if(DB.user_role != -1)
+                Pain_Column();
+
 
         }
 
@@ -80,12 +96,14 @@ namespace Practika_01_12_2021.UserControls
                 data.RowFilter = string.Format("`Название` like '%{0}%'", txtSearch.Text);
                 table.DataSource = data.ToTable();
 
-                Pain_Column();
+                if (DB.user_role != -1)
+                    Pain_Column();
             }
 
             if (txtSearch.Text == "")
             {
-                Pain_Column();
+                if (DB.user_role != -1)
+                    Pain_Column();
             }
         }
 

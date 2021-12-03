@@ -17,7 +17,12 @@ namespace Practika_01_12_2021.UserControls
         public employee()
         {
             InitializeComponent();
-            
+            if (DB.user_role == 1)
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+            }
+
         }
 
         DataTable tab;
@@ -57,16 +62,16 @@ namespace Practika_01_12_2021.UserControls
 
                 idArr[i] = table.Rows[i].Cells[0].Value.ToString();
 
-                table[6, i] = linkCell;
-                table[6, i].Style.BackColor = Color.FromArgb(46, 169, 79);
+                table[7, i] = linkCell;
+                table[7, i].Style.BackColor = Color.FromArgb(46, 169, 79);
             }
 
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
 
-                table[7, i] = linkCell;
-                table[7, i].Style.BackColor = Color.Tomato;
+                table[8, i] = linkCell;
+                table[8, i].Style.BackColor = Color.Tomato;
             }
         }
 
@@ -120,9 +125,9 @@ namespace Practika_01_12_2021.UserControls
         {
             try
             {
-                if (e.ColumnIndex == 6)
+                if (e.ColumnIndex == 7)
                 {
-                    string task = table.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string task = table.Rows[e.RowIndex].Cells[7].Value.ToString();
                     if (task == "Update")
                     {
 
@@ -149,6 +154,7 @@ namespace Practika_01_12_2021.UserControls
                             command.Parameters.Add("@ul3", MySqlDbType.VarChar).Value = table[3, rowIndex].Value.ToString();
                             command.Parameters.Add("@ul4", MySqlDbType.Date).Value = DateTime.Parse( table[4, rowIndex].Value.ToString());
                             command.Parameters.Add("@ul5", MySqlDbType.VarChar).Value = table[5, rowIndex].Value.ToString();
+                            command.Parameters.Add("@ul6", MySqlDbType.VarChar).Value = table[6, rowIndex].Value.ToString();
 
 
                             db.openConnection();
@@ -168,9 +174,9 @@ namespace Practika_01_12_2021.UserControls
 
             try
             {
-                if (e.ColumnIndex == 7)
+                if (e.ColumnIndex == 8)
                 {
-                    string task = table.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    string task = table.Rows[e.RowIndex].Cells[8].Value.ToString();
                     if (task == "Delete")
                     {
                         if (MessageBox.Show("Удалить эту строку",

@@ -26,6 +26,7 @@ namespace Practika_01_12_2021.AddControls
             list.Add(maskedTextBox2);
             list.Add(maskedTextBox3);
             list.Add(maskedTextBox4);
+            list.Add(maskedTextBox5);
             if (DB.ChecBox(list, label6))
                 return;
             else
@@ -35,14 +36,15 @@ namespace Practika_01_12_2021.AddControls
 
                 MySqlCommand command =
                     new MySqlCommand("INSERT INTO `клиент` " +
-                    "(`id_k`, `Компания`, `Телефон`, `Mail`, `Адрес`)" +
-                    " VALUES (NULL, @p0, @p1, @p2, @p3)",
+                    "(`id_k`, `Компания`, `Телефон`, `Mail`, `Адрес`, `pass`)" +
+                    " VALUES (NULL, @p0, @p1, @p2, @p3, @p4)",
                     dB.getConnection());
                 command.Parameters.Add("@p0", MySqlDbType.VarChar).Value = maskedTextBox1.Text;
                 command.Parameters.Add("@p1", MySqlDbType.VarChar).Value = maskedTextBox2.Text; 
                 command.Parameters.Add("@p2", MySqlDbType.VarChar).Value = maskedTextBox3.Text; 
-                command.Parameters.Add("@p3", MySqlDbType.VarChar).Value = maskedTextBox4.Text; 
-                
+                command.Parameters.Add("@p3", MySqlDbType.VarChar).Value = maskedTextBox4.Text;
+                command.Parameters.Add("@p4", MySqlDbType.VarChar).Value = maskedTextBox5.Text;
+
 
 
 

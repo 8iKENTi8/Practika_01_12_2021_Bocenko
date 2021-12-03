@@ -19,10 +19,20 @@ namespace Practika_01_12_2021.UserControls
         {
             InitializeComponent();
 
-            Pain_Column();
+            if (DB.user_role == -1)
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+            }
+
+            if (DB.user_role != -1)
+                Pain_Column();
+
+
         }
 
         DataTable tab;
+        MySqlCommand command;
 
         private void ReloadDB()
         {
@@ -33,16 +43,31 @@ namespace Practika_01_12_2021.UserControls
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command =
+             command =
                 new MySqlCommand("SELECT *, 'Update','Delete'" +
                 "FROM `клиент`", dB.getConnection());
+
+            if (DB.user_role == -1)
+            {
+                command =
+                new MySqlCommand("SELECT DISTINCT `договор`.`Дата_Закл`," +
+                "`договор`.`Дата_Окон`,`договор`.`Итог_дней`, " +
+                "`услуга`.`Название` AS 'Услуга', `сотрудник`.`Фамилия` " +
+                "AS 'Сотрудник' FROM `договор`, `услуга`, `сотрудник` " +
+                "WHERE `договор`.`id_k` = @ul AND " +
+                "`сотрудник`.`id_c`=`договор`.`id_c` AND " +
+                "`договор`.`id_y`=`услуга`.`id_y`", dB.getConnection());
+                command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = DB.user_id ;
+            }
 
             adapter.SelectCommand = command;
 
             adapter.Fill(tab);
 
             table.DataSource = tab;
-            Pain_Column();
+
+            if (DB.user_role != -1)
+                Pain_Column();
 
         }
 
@@ -53,20 +78,24 @@ namespace Practika_01_12_2021.UserControls
         }
         public  void Pain_Column()
         {
-            for (int i = 0; i < table.Rows.Count; i++)
+            if (DB.user_role != -1)
             {
-                DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
 
-                table[5, i] = linkCell;
-                table[5, i].Style.BackColor = Color.FromArgb(46, 169, 79);
-            }
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
 
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+                    table[6, i] = linkCell;
+                    table[6, i].Style.BackColor = Color.FromArgb(46, 169, 79);
+                }
 
-                table[6, i] = linkCell;
-                table[6, i].Style.BackColor = Color.Tomato;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+
+                    table[7, i] = linkCell;
+                    table[7, i].Style.BackColor = Color.Tomato;
+                }
             }
         }
 
@@ -75,15 +104,22 @@ namespace Practika_01_12_2021.UserControls
             if (e.KeyChar == (char)13)
             {
                 DataView data = tab.DefaultView;
-                data.RowFilter = string.Format("`Компания` like '%{0}%'", txtSearch.Text);
+                if (DB.user_role != -1)
+                    data.RowFilter = string.Format("`Компания` like '%{0}%'", txtSearch.Text);
+                else
+                    data.RowFilter = string.Format("`Услуга` like '%{0}%'", txtSearch.Text);
+
+
                 table.DataSource = data.ToTable();
 
-                Pain_Column();
+                if (DB.user_role != -1)
+                    Pain_Column();
             }
 
             if (txtSearch.Text == "")
             {
-                Pain_Column();
+                if (DB.user_role != -1)
+                    Pain_Column();
             }
         }
 
@@ -115,9 +151,9 @@ namespace Practika_01_12_2021.UserControls
         {
             try
             {
-                if (e.ColumnIndex == 5)
+                if (e.ColumnIndex == 6)
                 {
-                    string task = table.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    string task = table.Rows[e.RowIndex].Cells[6].Value.ToString();
                     if (task == "Update")
                     {
 
@@ -133,7 +169,7 @@ namespace Practika_01_12_2021.UserControls
 
                             DB db = new DB();
                             MySqlCommand command = new MySqlCommand("UPDATE `клиент` SET `id_k` = @ul, `Компания` = @ul1," +
-                                " `Телефон` = @ul2, `Mail` = @ul3, `Адрес` = @ul4 " +
+                                " `Телефон` = @ul2, `Mail` = @ul3, `Адрес` = @ul4, `pass` = @ul5 " +
                                 "WHERE `клиент`.`id_k` = @ul", db.getConnection());
 
                             command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = table[0, rowIndex].Value.ToString();
@@ -141,6 +177,7 @@ namespace Practika_01_12_2021.UserControls
                             command.Parameters.Add("@ul2", MySqlDbType.VarChar).Value = table[2, rowIndex].Value.ToString();
                             command.Parameters.Add("@ul3", MySqlDbType.VarChar).Value = table[3, rowIndex].Value.ToString();
                             command.Parameters.Add("@ul4", MySqlDbType.VarChar).Value = table[4, rowIndex].Value.ToString();
+                            command.Parameters.Add("@ul5", MySqlDbType.VarChar).Value = table[5, rowIndex].Value.ToString();
 
                             db.openConnection();
                             if (command.ExecuteNonQuery() == 1) { MessageBox.Show("Запись была обнавлена"); }
@@ -159,9 +196,9 @@ namespace Practika_01_12_2021.UserControls
 
             try
             {
-                if (e.ColumnIndex == 6)
+                if (e.ColumnIndex == 7)
                 {
-                    string task = table.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string task = table.Rows[e.RowIndex].Cells[7].Value.ToString();
                     if (task == "Delete")
                     {
                         if (MessageBox.Show("Удалить эту строку",
