@@ -81,9 +81,9 @@ namespace Practika_01_12_2021.AddControls
 
 
                 if (command.ExecuteNonQuery() == 1)
-                    MessageBox.Show("Услуга была создана!");
+                    MessageBox.Show("Сотрудник был создан!");
                 else
-                    MessageBox.Show("Услуга не была создана!");
+                    MessageBox.Show("Сотрудник не был создан!");
 
                 dB.closeConnection();
 

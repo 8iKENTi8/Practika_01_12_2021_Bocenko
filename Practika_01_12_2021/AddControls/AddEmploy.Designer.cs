@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
@@ -42,8 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 504);
             this.panel2.TabIndex = 6;
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(17, 364);
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(357, 20);
+            this.maskedTextBox5.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 338);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Пароль";
             // 
             // label5
             // 
@@ -104,13 +120,16 @@
             // maskedTextBox4
             // 
             this.maskedTextBox4.Location = new System.Drawing.Point(17, 305);
+            this.maskedTextBox4.Mask = "0000.00.00";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(357, 20);
             this.maskedTextBox4.TabIndex = 16;
+            this.maskedTextBox4.ValidatingType = typeof(System.DateTime);
             // 
             // maskedTextBox3
             // 
             this.maskedTextBox3.Location = new System.Drawing.Point(17, 241);
+            this.maskedTextBox3.Mask = "LLLLLLLLLLLLLLLLLLLLLL";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(357, 20);
             this.maskedTextBox3.TabIndex = 15;
@@ -118,6 +137,7 @@
             // maskedTextBox2
             // 
             this.maskedTextBox2.Location = new System.Drawing.Point(17, 169);
+            this.maskedTextBox2.Mask = "LLLLLLLLLLLLLLL";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(357, 20);
             this.maskedTextBox2.TabIndex = 14;
@@ -125,6 +145,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(17, 93);
+            this.maskedTextBox1.Mask = "LLLLLLLLLLLLLLLLLLLLLL";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(357, 20);
             this.maskedTextBox1.TabIndex = 13;
@@ -199,22 +220,6 @@
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Фамилия";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 338);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Пароль";
-            // 
-            // maskedTextBox5
-            // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(17, 364);
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(357, 20);
-            this.maskedTextBox5.TabIndex = 20;
             // 
             // AddEmploy
             // 
